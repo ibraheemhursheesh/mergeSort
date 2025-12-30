@@ -16,17 +16,13 @@ function mergeSort(array, start, end) {
 }
 
 function merge(array, start, midpoint, end) {
-  // start = 0
-  // midpoint = 3
-  // end = 7
-
-  // calculates the number of elements in the left half
   /*
-            The + 1 is necessary because the range is inclusive of both start and midpoint.
-            Example: If start = 0 and midpoint = 2, the left half includes indices 0, 1, 2,
-            which totals 3 elements. Without + 1, the length would be incorrectly calculated
-            as 2.
-        */
+    The + 1 is necessary because the range is inclusive of both start and midpoint.
+    Example: If start = 0 and midpoint = 2, the left half includes indices 0, 1, 2,
+    which totals 3 elements. Without + 1, the length would be incorrectly calculated
+    as 2.
+  */
+  // calculates the number of elements in the left half
   const leftLength = midpoint - start + 1;
 
   // calculates the number of elements in the right half
@@ -54,10 +50,7 @@ function merge(array, start, midpoint, end) {
   let i = 0,
     j = 0,
     k = start;
-  // [8, 5]
   while (i < leftLength && j < rightLength) {
-    // [ 15, 16, 17, 18 ]
-    // [ 11, 12, 13, 14 ]
     if (leftArray[i] <= rightArray[j]) {
       array[k] = leftArray[i];
       i++;
@@ -87,3 +80,4 @@ console.log("arr before sort", arr);
 
 mergeSort(arr, 0, arr.length - 1);
 console.log("arr sorted", arr);
+
